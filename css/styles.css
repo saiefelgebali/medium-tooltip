@@ -10,8 +10,8 @@ body {
 }
 
 ::selection {
-	color: black;
-	background: hsl(60, 95%, 60%);
+	color: white;
+	background: hsl(214, 95%, 60%);
 }
 
 p {
@@ -20,6 +20,7 @@ p {
 	align-self: center;
 	max-width: 400px;
 	line-height: 1.6;
+	text-align: justify;
 }
 
 .tooltip {
@@ -28,7 +29,7 @@ p {
 	user-select: none;
 	position: absolute;
 	min-width: 50px;
-	transform: translateX(-50%) translateY(-130%);
+	transform: translateX(-50%) translateY(-140%);
 
 	display: flex;
 	justify-content: center;
@@ -103,8 +104,9 @@ p {
 		transform: translateX(-50%) translateY(-100%);
 		opacity: 0;
 	}
+
 	to {
-		transform: translateX(-50%) translateY(-130%);
+		transform: translateX(-50%) translateY(-140%);
 		opacity: 1;
 	}
 }
