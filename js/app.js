@@ -15,17 +15,13 @@ document.addEventListener("mouseup", (e) => {
 document.addEventListener("selectionchange", (e) => {
 	selection = document.getSelection();
 
-	// remove tooltip if selection is empty
-	if (selection.type != "Range") {
-		selection = null;
-		tooltipActive = false;
-		removeTooltip();
-		return;
-	}
-
-	// remove tooltip if selection is not within a single element
-	if (selection.focusNode != selection.anchorNode) {
-		selection = null;
+	if (
+		// remove tooltip if selection is empty
+		selection.type != "Range" ||
+		// remove tooltip if selection is not within a single element
+		selection.focusNode != selection.anchorNode
+	) {
+		selection = null; // reset selection
 		tooltipActive = false;
 		removeTooltip();
 		return;
