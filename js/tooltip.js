@@ -1,8 +1,13 @@
 const tooltipHTML = `
-	<button class="icon-button"><i class="fa-solid fa-message"></i></button>
-	<button class="icon-button"><i class="fa-solid fa-message"></i></button>
-	<button class="icon-button"><i class="fa-solid fa-message"></i></button>
-	<button class="icon-button"><i class="fa-solid fa-message"></i></button>
+	<div class="tooltip__group">
+		<div class="tooltip__button"><i class="fa-solid fa-pen"></i></div>
+		<div class="tooltip__button"><i class="fa-solid fa-comment"></i></div>
+		<div class="tooltip__button"><i class="fa-brands fa-twitter"></i></div>
+	</div>
+	<div class="seperator"></div>
+	<div class="tooltip__group">
+		<div class="tooltip__button"><i class="fa-solid fa-message"></i></div>
+	</div>
     `;
 
 /**

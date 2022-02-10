@@ -1,4 +1,9 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
+	margin: 2rem 0rem;
 	font-family: sans-serif;
 	display: flex;
 	flex-direction: column;
@@ -10,28 +15,33 @@ body {
 }
 
 p {
+	margin: 1rem 0rem;
+	font-size: 18px;
 	align-self: center;
 	max-width: 400px;
-	line-height: 24px;
+	line-height: 1.6;
 }
 
 .tooltip {
-	--bg: hsl(0, 0%, 20%);
+	--bg: hsl(0, 0%, 0%);
 
 	user-select: none;
 	position: absolute;
 	min-width: 50px;
-	height: 50px;
 	transform: translateX(-50%) translateY(-130%);
 
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
 	background-color: var(--bg);
 	border-radius: 4px;
-	padding: 4px;
+	padding: 8px 4px;
 
 	animation: tooltip__enter 250ms ease-in;
+}
+
+.tooltip > * {
+	display: inline-block;
 }
 
 .tooltip::after {
@@ -47,23 +57,45 @@ p {
 	border-top: 10px solid var(--bg);
 }
 
-.tooltip button {
+.tooltip__group {
+	display: flex;
+	padding: 0px 12px;
+}
+
+.tooltip__button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	cursor: pointer;
 
 	background-color: transparent;
 	border: none;
+	margin: 0px;
+	margin-right: 6px;
+	width: 25px;
+	height: 25px;
+
+	color: white;
 }
 
-.tooltip button:active {
-	transform: scale(0.9);
+.tooltip__button:last-of-type {
+	margin-right: 0px;
 }
 
 .tooltip svg {
-	color: white;
+	width: 20px;
+	height: 20px;
 }
 
 .tooltip svg:focus {
 	color: red;
+}
+
+.seperator {
+	width: 1px;
+	background-color: rgba(255, 255, 255, 0.3);
+	min-height: 25px;
+	height: 100%;
 }
 
 @keyframes tooltip__enter {
